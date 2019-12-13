@@ -14,16 +14,14 @@ class DB {
 
     private function connect(){
 
-		global $CONFIG;
-
 		try {
 			$this->dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
 		} catch (PDOException $e) {
 			die("Es konnte keine Verbindung zur Datenbank hergestellt werden.");
 		}
 
-    }
-
+	}
+	
     public function get($sql, $e = []){
         try{
 			$res = $this->query($sql, $e);

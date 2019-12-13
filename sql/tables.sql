@@ -10,6 +10,18 @@ ALTER TABLE `users` MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
+CREATE TABLE `sessions` (
+  `sessionID` varchar(80) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `users` ADD PRIMARY KEY (`sessionID`);
+ALTER TABLE `sessions`
+  ADD CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`);
+
+-- --------------------------------------------------------
+
 CREATE TABLE `groups` (
   `groupID` int(11) NOT NULL,
   `groupName` varchar(30) NOT NULL

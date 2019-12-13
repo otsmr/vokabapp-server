@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
             <h1>VokabApp Server</h1>
             <p class='desc'>Ein Service von <a href='https://oproj.de'>oproj.de.</a></p>
         </header>
-        <a class='button' href="https://github.com/otsmr/vokabapp">Herunterladen</a>
+        <a class='button' href="https://github.com/otsmr/vokabapp">zu Github</a>
         <a class='imprint' href='https://oproj.de/privacy'>Privacy & Imprint</a>
     </main>
 </body>
