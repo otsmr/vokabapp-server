@@ -67,6 +67,8 @@ if (!$user || startsWith($tmpSessionID, "tmp_") || $user["valid"] === 0) {
 /**
  * # Mögliche Anfragen
  * -> GET historys/[letzte]time
- * -> PUT users/config -> config, lastUpdate
  * -> PUT historys -> itemID, box, time
+ * -> PUT users/config -> config, lastUpdate
+ * -> GET sessions 
+ * -> DELETE sessions 
  */

@@ -7,7 +7,7 @@ function startsWith($haystack, $needle) {
     return (substr($haystack, 0, $length) === $needle);
 }
 
-$success = false;
+$status = "error";
 
 if (
     isset($_GET['token']) &&
@@ -32,18 +32,14 @@ if (
 
         if ($userByOdmin) {
 
-            if ($userByOdmin["valid"] === 0) {
-                $db->query("UPDATE `users` SET `valid` = '1' WHERE `userID` = ?", [$userByOdmin["userID"]]);
-            }
-            
-            if ($userBySession["userID"] !== $userByOdmin["userID"]) {
+            if ($userBySession && $userBySession["userID"] !== $userByOdmin["userID"]) {
                 
                 $db->query("UPDATE `sessions` SET `userID` = ?, `valid` = '1' WHERE `userID` = ?", [$userByOdmin["userID"], $userBySession["userID"]]);
                 
                 $db->query("DELETE FROM `users` WHERE `userID` = ?", [$userBySession["userID"]]);
                 $db->query("DELETE FROM `sessions` WHERE `sessionID` = ?", [$tmpSessionID]);
                 
-                $success = true;
+                $status = "signIn";
                 
             }
             
@@ -54,7 +50,7 @@ if (
 
             $db->query("DELETE FROM `sessions` WHERE `sessionID` = ?", [$tmpSessionID]);
 
-            $success = true;
+            $status = "newAccount";
 
         }
         
@@ -74,10 +70,16 @@ if (
 </head>
 <body>
     <main>
-        <?php if ($success): ?>
+        <?php if ($status === "newAccount"): ?>
             <header>
                 <h1>VokabApp</h1>
                 <p class='desc' style="color: #4ac14a;">Account erfolgreich erstellt</a></p>
+            </header>
+            <p style="font-weight: bold; font-size: 24px;">Diese Seite kann geschlossen werden.</p>
+        <?php elseif ($status === "signIn"): ?>
+            <header>
+                <h1>VokabApp</h1>
+                <p class='desc' style="color: #4ac14a;">Erfolgreich angemeldet</a></p>
             </header>
             <p style="font-weight: bold; font-size: 24px;">Diese Seite kann geschlossen werden.</p>
         <?php else: ?>
