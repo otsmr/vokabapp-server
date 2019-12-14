@@ -37,18 +37,18 @@ class DB {
 		$s->execute($e);
 		return $s;
 	}
+
+	public function insert($sql, $e = []){
+		$s = $this->dbh->prepare($sql);
+		$s->execute($e);
+		return $this->dbh->lastInsertId();
+	}
 	
 	public function count ($sql, $e = []) {
 		$s = $this->query($sql, $e);
 		return $s->fetchColumn();
 	}
 	
-    public function set($sql, $e = []){
-		$s = $this->dbh->prepare($sql);
-		return $s->execute($e);
-    }
-
-
 }
 
 $db = new DB();

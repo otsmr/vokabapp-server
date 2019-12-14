@@ -1,11 +1,14 @@
 CREATE TABLE `users` (
   `userID` int(11) NOT NULL,
-  `odminUserID` int(11) NOT NULL,
+  `odminUserID` int(11) NULL DEFAULT NULL,
+  `identity` VARCHAR(32) NULL DEFAULT NULL,
+  `valid` BOOLEAN NOT NULL DEFAULT FALSE,
   `config` text NOT NULL,
   `lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `users` ADD PRIMARY KEY (`userID`);
+ALTER TABLE `users` ADD UNIQUE(`odminUserID`);
 ALTER TABLE `users` MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
@@ -13,12 +16,13 @@ ALTER TABLE `users` MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT;
 CREATE TABLE `sessions` (
   `sessionID` varchar(80) NOT NULL,
   `userID` int(11) NOT NULL,
+  `valid` BOOLEAN NOT NULL DEFAULT FALSE,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `users` ADD PRIMARY KEY (`sessionID`);
 ALTER TABLE `sessions`
-  ADD CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`);
+  ADD CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 
@@ -42,7 +46,7 @@ ALTER TABLE `subGroups` ADD PRIMARY KEY (`subGroupID`);
 ALTER TABLE `subgroups` ADD INDEX(`groupID`);
 ALTER TABLE `subGroups` MODIFY `subGroupID` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `subgroups`
-  ADD CONSTRAINT `subgroups_ibfk_1` FOREIGN KEY (`groupID`) REFERENCES `groups` (`groupID`);
+  ADD CONSTRAINT `subgroups_ibfk_1` FOREIGN KEY (`groupID`) REFERENCES `groups` (`groupID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 
@@ -92,5 +96,5 @@ ALTER TABLE `historys` ADD INDEX(`userID`);
 ALTER TABLE `historys` ADD INDEX(`itemID`);
 ALTER TABLE `historys` MODIFY `historyID` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `historys`
-  ADD CONSTRAINT `historys_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`),
-  ADD CONSTRAINT `historys_ibfk_2` FOREIGN KEY (`itemID`) REFERENCES `items` (`itemID`);
+  ADD CONSTRAINT `historys_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `historys_ibfk_2` FOREIGN KEY (`itemID`) REFERENCES `items` (`itemID`) ON DELETE CASCADE ON UPDATE CASCADE;

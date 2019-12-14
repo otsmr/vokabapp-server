@@ -1,5 +1,6 @@
 <?php
 
+require __DIR__ . "/../config.php";
 
 function startsWith($haystack, $needle) {
     $length = strlen($needle);
@@ -15,15 +16,51 @@ if (
 {
     
     require_once __DIR__ . "/db.php";
-    
+    require_once __DIR__ . "/odmin.php";
+
     $token = htmlentities($_GET['token']);
     $tmpSessionID = htmlentities($_GET['return_to']);
+    
+    $odmin = new \Odmin\Api($token);
+    $odminUserID = $odmin->get("getUserID");
 
-    //! check token
-    //* odminUserID holen und speichern, tmpSessionID löschen
+    if ($odminUserID->ok) {
+        $odminUserID = $odminUserID->ok;
+
+        $userBySession = $db->get("SELECT `userID` from `sessions` WHERE `sessionID` = ? AND (`time` > DATE_SUB(now(), INTERVAL 1 DAY))", [$tmpSessionID]);
+        $userByOdmin = $db->get("SELECT `userID`, `valid` from `users` WHERE `odminUserID` = ?", [$odminUserID]);
+
+        if ($userByOdmin) {
+
+            if ($userByOdmin["valid"] === 0) {
+                $db->query("UPDATE `users` SET `valid` = '1' WHERE `userID` = ?", [$userByOdmin["userID"]]);
+            }
+            
+            if ($userBySession["userID"] !== $userByOdmin["userID"]) {
+                
+                $db->query("UPDATE `sessions` SET `userID` = ?, `valid` = '1' WHERE `userID` = ?", [$userByOdmin["userID"], $userBySession["userID"]]);
+                
+                $db->query("DELETE FROM `users` WHERE `userID` = ?", [$userBySession["userID"]]);
+                $db->query("DELETE FROM `sessions` WHERE `sessionID` = ?", [$tmpSessionID]);
+                
+                $success = true;
+                
+            }
+            
+        } else if ($userBySession) {
+
+            $db->query("UPDATE `users` SET `odminUserID` = ?, `identity` = NULL, `valid` = '1' WHERE `userID` = ?", [$odminUserID, $userBySession["userID"]]);
+            $db->query("UPDATE `sessions` SET `valid` = '1' WHERE `userID` = ?", [$userBySession["userID"]]);
+
+            $db->query("DELETE FROM `sessions` WHERE `sessionID` = ?", [$tmpSessionID]);
+
+            $success = true;
+
+        }
+        
+    }
 
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -40,7 +77,7 @@ if (
         <?php if ($success): ?>
             <header>
                 <h1>VokabApp</h1>
-                <p class='desc'>Account erfolgreich erstellt</a></p>
+                <p class='desc' style="color: #4ac14a;">Account erfolgreich erstellt</a></p>
             </header>
             <p style="font-weight: bold; font-size: 24px;">Diese Seite kann geschlossen werden.</p>
         <?php else: ?>
