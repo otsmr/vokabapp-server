@@ -52,6 +52,12 @@ if (!$user || startsWith($tmpSessionID, "tmp_") || $user["valid"] === 0) {
     ]));
 }
 
+if (isset($_POST["checkSessionID"])) {
+    die(json_encode([
+        "ok" => true
+    ]));
+}
+
 if (isset($_POST["config"])) {
 
     $post = json_decode($_POST["config"]);
