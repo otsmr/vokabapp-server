@@ -1,20 +1,8 @@
 <?php
 header('Content-Type: application/json');
+// error_reporting(0);
 
 require_once __DIR__ . "/db.php";
-
-//? Anmeldung
-/**
- * 
- ** Benutzer registriert sich bei api/sync.php 
- *? -> Bekommt sessionID (sicher) und tmpSessionID (beginnt mit 'tmp_') und speichert den sicheren
- * Im Hintergrund wird ein User angelegt ohne odminUserID
- *? -> Wird auf odmin.de weitergeleitet (return_to ist tmpSessionID) und von dort nach api/oauth.php
- *? -> Mit dem tmpSessionID kann der User identifiziert werden -> wird freigeschaltet
- *! -> Nachricht: Der Account wurde Erfolgreich angelegt
- * 
- *? sessionID tauschen?
- **/ 
 
 function randomString($length = 20, $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
     $rand = '';
@@ -56,12 +44,51 @@ function startsWith($haystack, $needle) {
 
 $tmpSessionID = $_POST["sessionID"];
 
-$user = $db->get("SELECT * FROM `users` WHERE `userID` = (SELECT `userID` FROM `sessions` WHERE `valid` = 1 AND `sessionID` = ?)", [$tmpSessionID]);
+$user = $db->get("SELECT *, UNIX_TIMESTAMP(lastUpdate) as timeServer FROM `users` WHERE `userID` = (SELECT `userID` FROM `sessions` WHERE `valid` = 1 AND `sessionID` = ?)", [$tmpSessionID]);
 
 if (!$user || startsWith($tmpSessionID, "tmp_") || $user["valid"] === 0) {
     die(json_encode([
         "error" => "sessionID nicht gültig."
     ]));
+}
+
+if (isset($_POST["config"])) {
+
+    $post = json_decode($_POST["config"]);
+
+    $configClient = json_encode($post->config);
+    $timeClient = $post->time;
+    $timeServer = $user["timeServer"];
+
+    if ($timeServer == $timeClient) {
+        die(json_encode([
+            "ok" => "Einstellungen sind aktuell."
+        ]));
+    }
+    if ($configClient && $timeClient) {
+        
+        if ($user["config"] === "" || $timeServer < $timeClient) {
+
+            $db->query("UPDATE `users` SET `config` = ?, `lastUpdate` = FROM_UNIXTIME(?) WHERE `users`.`userID` = ?", [$configClient, $timeClient, $user["userID"]]);
+
+            die(json_encode([
+                "ok" => "Einstellungen wurden hochgeladen."
+            ]));
+
+        } else {
+
+            die(json_encode([
+                "config" => json_decode($user["config"]),
+                "time" => (int) $user["timeServer"]
+            ]));
+        }      
+
+    }
+
+    die(json_encode([
+        "error" => "Anfrage nicht gültig."
+    ]));
+
 }
 
 /**

@@ -1,6 +1,5 @@
 <?php
-
-require __DIR__ . "/../config.php";
+error_reporting(0);
 
 function startsWith($haystack, $needle) {
     $length = strlen($needle);
