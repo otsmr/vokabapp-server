@@ -42,11 +42,11 @@ function startsWith($haystack, $needle) {
     return (substr($haystack, 0, $length) === $needle);
 }
 
-$tmpSessionID = $_POST["sessionID"];
+$sessionID = $_POST["sessionID"];
 
-$user = $db->get("SELECT *, UNIX_TIMESTAMP(lastUpdate) as timeServer FROM `users` WHERE `userID` = (SELECT `userID` FROM `sessions` WHERE `valid` = 1 AND `sessionID` = ?)", [$tmpSessionID]);
+$user = $db->get("SELECT *, UNIX_TIMESTAMP(lastUpdate) as timeServer FROM `users` WHERE `userID` = (SELECT `userID` FROM `sessions` WHERE `valid` = 1 AND `sessionID` = ?)", [$sessionID]);
 
-if (!$user || startsWith($tmpSessionID, "tmp_") || $user["valid"] === 0) {
+if (!$user || startsWith($sessionID, "tmp_") || $user["valid"] === 0) {
     die(json_encode([
         "error" => "sessionID nicht gültig."
     ]));
@@ -57,13 +57,20 @@ if (isset($_POST["checkSessionID"])) {
         "ok" => true
     ]));
 }
+if (isset($_POST["destroySession"])) {
+
+    $db->query("DELETE FROM `sessions` WHERE `sessionID` = ?", [$sessionID]);
+    die(json_encode([
+        "ok" => true
+    ]));
+}
 
 if (isset($_POST["config"])) {
 
-    $post = json_decode($_POST["config"]);
+    $post = $_POST["config"];
 
-    $configClient = json_encode($post->config);
-    $timeClient = $post->time;
+    $configClient = json_encode($post["config"]);
+    $timeClient = $post["time"];
     $timeServer = $user["timeServer"];
 
     if ($timeServer == $timeClient) {
@@ -71,7 +78,7 @@ if (isset($_POST["config"])) {
             "ok" => "Einstellungen sind aktuell."
         ]));
     }
-    if ($configClient && $timeClient) {
+    if ($configClient) {
         
         if ($user["config"] === "" || $timeServer < $timeClient) {
 
@@ -96,6 +103,10 @@ if (isset($_POST["config"])) {
     ]));
 
 }
+
+die(json_encode([
+    "error" => "Anfrage nicht gültig."
+]));
 
 /**
  * # Mögliche Anfragen
