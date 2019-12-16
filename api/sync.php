@@ -104,6 +104,7 @@ if (isset($_POST["config"])) {
 
 }
 
+
 die(json_encode([
     "error" => "Anfrage nicht gültig."
 ]));

@@ -13,9 +13,8 @@ class DB {
     }
 
     private function connect(){
-
 		try {
-			$this->dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASSWORD);
+			$this->dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME . ";", DB_USER, DB_PASSWORD);
 		} catch (PDOException $e) {
 			die("Es konnte keine Verbindung zur Datenbank hergestellt werden.");
 		}
