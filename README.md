@@ -41,7 +41,7 @@
 
     Die ```sessionID``` wird lokal gespeichert.  
     Die App öffnet den ```siginPath```, damit sich der Benutzer anmelden / registrieren kann.  
-    Nach der Anmeldung wird der Benutzer weitergeleitet um die Session zu aktivieren.
+    Nach der Anmeldung wird der Benutzer weitergeleitet, um die Session zu aktivieren.
 
     ``` GET /api/oauth.php ```  
     
@@ -55,7 +55,7 @@
 
 3. **Fertig**
 
-    Die ```sessionID``` ist freigeschaltet und der Benutzer kann den Browser schließen und zurück zur App gehen.
+    Die ```sessionID``` ist freigeschaltet. Der Benutzer kann den Browser schließen und zurück zur App gehen.
 
 # Copyright und Lizenz
 Copyright by <a href="https://tsmr.eu">TSMR</a>
