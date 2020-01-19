@@ -20,7 +20,7 @@ CREATE TABLE `sessions` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE `users` ADD PRIMARY KEY (`sessionID`);
+ALTER TABLE `sessions` ADD PRIMARY KEY (`sessionID`);
 ALTER TABLE `sessions`
   ADD CONSTRAINT `sessions_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -64,7 +64,7 @@ ALTER TABLE `lists` ADD PRIMARY KEY (`listID`);
 ALTER TABLE `lists` ADD INDEX(`subGroupID`);
 ALTER TABLE `lists` MODIFY `listID` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `lists`
-  ADD CONSTRAINT `lists_ibfk_1` FOREIGN KEY (`subGroupID`) REFERENCES `subgroups` (`subGroupID`);
+  ADD CONSTRAINT `lists_ibfk_1` FOREIGN KEY (`subGroupID`) REFERENCES `subgroups` (`subGroupID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 
@@ -79,7 +79,7 @@ ALTER TABLE `items` ADD PRIMARY KEY (`itemID`);
 ALTER TABLE `items` ADD INDEX(`listID`);
 ALTER TABLE `items` MODIFY `itemID` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `items`
-  ADD CONSTRAINT `items_ibfk_1` FOREIGN KEY (`listID`) REFERENCES `lists` (`listID`);
+  ADD CONSTRAINT `items_ibfk_1` FOREIGN KEY (`listID`) REFERENCES `lists` (`listID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 

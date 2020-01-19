@@ -8,6 +8,5 @@ define('DB_HOST', 'localhost');
 
 
 // ** odmin.de ** //
-define('ODMIN_CLIENT_ID', '');
-define('ODMIN_API_KEY', '');
-define('ODMIN_API_URL', 'https://api.odmin.de/v0/');
+define('ODMIN_SERVICE_NAME', '');
+define('ODMIN_BASE_URL', '');

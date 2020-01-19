@@ -32,7 +32,7 @@ if (!isset($_POST["sessionID"])) {
 
     die(json_encode([
         "sessionID" => $sessionID,
-        "siginPath" => "https://odmin.de/signin?return_to=".$tmpSessionID."&clientID=". ODMIN_CLIENT_ID
+        "siginPath" => ODMIN_BASE_URL . "login?return_to=".$tmpSessionID."&service=". ODMIN_SERVICE_NAME
     ]));
 
 }

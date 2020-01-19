@@ -15,44 +15,52 @@ if (
 {
     
     require_once __DIR__ . "/db.php";
-    require_once __DIR__ . "/odmin.php";
 
     $token = htmlentities($_GET['token']);
     $tmpSessionID = htmlentities($_GET['return_to']);
+
+    $url = ODMIN_BASE_URL . "/api/istokenvalid/" . $_GET['token'];
+
+    try {
+
+        $res = json_decode(file_get_contents($url));
     
-    $odmin = new \Odmin\Api($token);
-    $odminUserID = $odmin->get("getUserID");
-
-    if ($odminUserID->ok) {
-        $odminUserID = $odminUserID->ok;
-
-        $userBySession = $db->get("SELECT `userID` from `sessions` WHERE `sessionID` = ? AND (`time` > DATE_SUB(now(), INTERVAL 1 DAY))", [$tmpSessionID]);
-        $userByOdmin = $db->get("SELECT `userID`, `valid` from `users` WHERE `odminUserID` = ?", [$odminUserID]);
-
-        if ($userByOdmin) {
-
-            if ($userBySession && $userBySession["userID"] !== $userByOdmin["userID"]) {
+        if(isset($res->valid) && $res->valid) {
+            $odminUserID = $res->user->id;
+    
+            $userBySession = $db->get("SELECT `userID` from `sessions` WHERE `sessionID` = ? AND (`time` > DATE_SUB(now(), INTERVAL 1 DAY))", [$tmpSessionID]);
+            $userByOdmin = $db->get("SELECT `userID`, `valid` from `users` WHERE `odminUserID` = ?", [$odminUserID]);
+    
+            if ($userByOdmin) {
+    
+                if ($userBySession && $userBySession["userID"] !== $userByOdmin["userID"]) {
+                    
+                    $db->query("UPDATE `sessions` SET `userID` = ?, `valid` = '1' WHERE `userID` = ?", [$userByOdmin["userID"], $userBySession["userID"]]);
+                    
+                    $db->query("DELETE FROM `users` WHERE `userID` = ?", [$userBySession["userID"]]);
+                    $db->query("DELETE FROM `sessions` WHERE `sessionID` = ?", [$tmpSessionID]);
+                    
+                    $status = "signIn";
+                    
+                }
                 
-                $db->query("UPDATE `sessions` SET `userID` = ?, `valid` = '1' WHERE `userID` = ?", [$userByOdmin["userID"], $userBySession["userID"]]);
-                
-                $db->query("DELETE FROM `users` WHERE `userID` = ?", [$userBySession["userID"]]);
+            } else if ($userBySession) {
+    
+                $db->query("UPDATE `users` SET `odminUserID` = ?, `identity` = NULL, `valid` = '1' WHERE `userID` = ?", [$odminUserID, $userBySession["userID"]]);
+                $db->query("UPDATE `sessions` SET `valid` = '1' WHERE `userID` = ?", [$userBySession["userID"]]);
+    
                 $db->query("DELETE FROM `sessions` WHERE `sessionID` = ?", [$tmpSessionID]);
-                
-                $status = "signIn";
-                
+    
+                $status = "newAccount";
+    
             }
             
-        } else if ($userBySession) {
-
-            $db->query("UPDATE `users` SET `odminUserID` = ?, `identity` = NULL, `valid` = '1' WHERE `userID` = ?", [$odminUserID, $userBySession["userID"]]);
-            $db->query("UPDATE `sessions` SET `valid` = '1' WHERE `userID` = ?", [$userBySession["userID"]]);
-
-            $db->query("DELETE FROM `sessions` WHERE `sessionID` = ?", [$tmpSessionID]);
-
-            $status = "newAccount";
-
         }
-        
+
+
+
+    } catch (\Throwable $th) {
+
     }
 
 }
