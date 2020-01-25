@@ -84,6 +84,7 @@ ALTER TABLE `items`
 -- --------------------------------------------------------
 
 CREATE TABLE `historys` (
+  `historyDBID` int(11) NOT NULL,
   `historyID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `itemID` int(11) NOT NULL,
@@ -91,10 +92,10 @@ CREATE TABLE `historys` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-ALTER TABLE `historys` ADD PRIMARY KEY (`historyID`);
+ALTER TABLE `historys` ADD PRIMARY KEY (`historyDBID`);
 ALTER TABLE `historys` ADD INDEX(`userID`);
 ALTER TABLE `historys` ADD INDEX(`itemID`);
-ALTER TABLE `historys` MODIFY `historyID` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `historys` MODIFY `historyDBID` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `historys`
   ADD CONSTRAINT `historys_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `historys_ibfk_2` FOREIGN KEY (`itemID`) REFERENCES `items` (`itemID`) ON DELETE CASCADE ON UPDATE CASCADE;

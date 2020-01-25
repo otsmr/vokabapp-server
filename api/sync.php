@@ -4,20 +4,31 @@ header('Content-Type: application/json');
 
 require_once __DIR__ . "/db.php";
 
+
 function randomString($length = 20, $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
     $rand = '';
     for ($i = 0; $i < $length; $i++) $rand .= $characters[rand(0, strlen($characters) - 1)];
     return $rand;
 }
+function startsWith($haystack, $needle) {
+    $length = strlen($needle);
+    return (substr($haystack, 0, $length) === $needle);
+}
+
+
+// -------------------------------
+//  Benutzer erstellen / anmelden
+// -------------------------------
+
 
 if (!isset($_POST["sessionID"])) {
 
     $identity = md5("88gjbvasvipsdfbujp" . $_SERVER['REMOTE_ADDR'] . "kbgipz426alsdhjoadb");
     $count = $db->get("SELECT COUNT(*) FROM `users` WHERE (`lastUpdate` > DATE_SUB(now(), INTERVAL 1 HOUR)) AND `identity` = ?", [$identity]);
 
-    if ($count["COUNT(*)"] > 5) {
+    if ($count["COUNT(*)"] > 10) {
         die(json_encode([
-            "error" => "Maximal 5 Accounts in einer Stunde."
+            "error" => "Maximal 10 Accounts in einer Stunde."
         ]));
     }
 
@@ -37,10 +48,7 @@ if (!isset($_POST["sessionID"])) {
 
 }
 
-function startsWith($haystack, $needle) {
-    $length = strlen($needle);
-    return (substr($haystack, 0, $length) === $needle);
-}
+
 
 $sessionID = $_POST["sessionID"];
 
@@ -57,13 +65,22 @@ if (isset($_POST["checkSessionID"])) {
         "ok" => true
     ]));
 }
+
 if (isset($_POST["destroySession"])) {
 
     $db->query("DELETE FROM `sessions` WHERE `sessionID` = ?", [$sessionID]);
     die(json_encode([
         "ok" => true
     ]));
+
 }
+
+
+
+// -------------------------
+//  Einstellungen sync.
+// -------------------------
+
 
 if (isset($_POST["config"])) {
 
@@ -105,6 +122,86 @@ if (isset($_POST["config"])) {
 }
 
 
+// -------------------------
+//  History sync.
+// -------------------------
+
+
+if (isset($_POST["history"])) {
+
+    $post = $_POST["history"];
+
+    $lastHistoryDBID = (int) $post["lastHistoryDBID"];
+
+    if (isset($post["uploadHistory"])) {
+        $uploadHistory = $post["uploadHistory"];
+    } else {
+        $uploadHistory = [];
+    }
+    
+    $historysForClient = $db->query("SELECT * FROM `historys` WHERE `userID` = ? AND historyDBID >= ?", [$user["userID"], $lastHistoryDBID]);
+    $historysForClient = $historysForClient->fetchAll(PDO::FETCH_ASSOC);
+    
+    $count = sizeof($historysForClient);
+
+    if ($count >= 1) {
+        array_shift($historysForClient);
+    }
+
+    if ($count === 1 && sizeof($uploadHistory) === 0) {
+
+        die(json_encode([
+            "ok" => "History ist aktuell."
+        ]));
+
+    }
+
+    if ($count > 1 && sizeof($uploadHistory) === 0) {
+
+        die(json_encode([
+            "historysFromServer" => $historysForClient,
+        ]));
+
+    }
+
+    
+
+    $out = [];
+
+    foreach ($uploadHistory as $key => $history) {
+
+        $checkDoubleEntry = $db->get("SELECT historyDBID FROM `historys` WHERE `userID` = ? AND `historyID` = ?", [
+            $user["userID"],
+            $history["historyID"]
+        ]);
+
+        if (!$checkDoubleEntry) {
+            $historyDBID = $db->insert("INSERT INTO `historys` (`historyID`, `userID`, `itemID`, `box`, `time`) VALUES (?, ?, ?, ?, FROM_UNIXTIME(?))", [
+                $history["historyID"],
+                $user["userID"],
+                $history["itemID"],
+                $history["box"],
+                $history["time"]
+            ]);
+        } else {
+            $historyDBID = $checkDoubleEntry["historyDBID"];
+        }
+
+        array_push($out, [
+            "historyID" => (int) $history["historyID"],
+            "historyDBID" => (int) $historyDBID
+        ]);
+        
+    }
+
+    die(json_encode([
+        "uploadedHistorys" => $out,
+        "historysFromServer" => $historysForClient
+    ]));
+
+}
+
+
 die(json_encode([
     "error" => "Anfrage nicht gültig."
 ]));
@@ -113,7 +210,6 @@ die(json_encode([
  * # Mögliche Anfragen
  * -> GET historys/[letzte]time
  * -> PUT historys -> itemID, box, time
- * -> PUT users/config -> config, lastUpdate
  * -> GET sessions 
  * -> DELETE sessions 
  */
