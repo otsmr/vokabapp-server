@@ -14,7 +14,7 @@ if (isset($_POST["sessionID"])) {
 if (isset($_POST["getMetaData"])) {
     
     $groups = $db->query("SELECT * FROM groups");
-    $subGroups = $db->query("SELECT * FROM subgroups");
+    $subGroups = $db->query("SELECT * FROM subGroups");
     $lists = $db->query("SELECT * FROM lists");
     
     die(json_encode([

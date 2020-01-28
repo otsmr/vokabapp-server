@@ -43,10 +43,10 @@ CREATE TABLE `subGroups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `subGroups` ADD PRIMARY KEY (`subGroupID`);
-ALTER TABLE `subgroups` ADD INDEX(`groupID`);
+ALTER TABLE `subGroups` ADD INDEX(`groupID`);
 ALTER TABLE `subGroups` MODIFY `subGroupID` int(11) NOT NULL AUTO_INCREMENT;
-ALTER TABLE `subgroups`
-  ADD CONSTRAINT `subgroups_ibfk_1` FOREIGN KEY (`groupID`) REFERENCES `groups` (`groupID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `subGroups`
+  ADD CONSTRAINT `subGroups_ibfk_1` FOREIGN KEY (`groupID`) REFERENCES `groups` (`groupID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 
@@ -64,7 +64,7 @@ ALTER TABLE `lists` ADD PRIMARY KEY (`listID`);
 ALTER TABLE `lists` ADD INDEX(`subGroupID`);
 ALTER TABLE `lists` MODIFY `listID` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `lists`
-  ADD CONSTRAINT `lists_ibfk_1` FOREIGN KEY (`subGroupID`) REFERENCES `subgroups` (`subGroupID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `lists_ibfk_1` FOREIGN KEY (`subGroupID`) REFERENCES `subGroups` (`subGroupID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- --------------------------------------------------------
 
