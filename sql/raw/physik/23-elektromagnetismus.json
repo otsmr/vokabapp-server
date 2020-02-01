@@ -1,0 +1,50 @@
+[
+    {
+        "formel": "<math> <mrow> <mrow> <mi>B</mi> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>μ</mi> <mn>0</mn> </msub> <mo stretchy=\"false\">⋅</mo> <msub> <mi>μ</mi> <mi>r</mi> </msub> </mrow> </mrow> <mfrac> <mrow> <mi>I</mi> <mo stretchy=\"false\">⋅</mo> <mi>n</mi> </mrow> <mi>l</mi> </mfrac> </mrow> </math>",
+        "title": "m. Feldstärke (Spule)"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>U</mi> <mi>H</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <mi>v</mi> <mo stretchy=\"false\">⋅</mo> <mi>B</mi> <mo stretchy=\"false\">⋅</mo> <mi>b</mi> </mrow> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <msub> <mi>R</mi> <mi>H</mi> </msub> <mo stretchy=\"false\">⋅</mo> <mi>I</mi> <mo stretchy=\"false\">⋅</mo> <mi>B</mi> </mrow> <mi>d</mi> </mfrac> </mrow> </math>",
+        "title": "Hallspannung"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>R</mi> <mi>H</mi> </msub> <mo stretchy=\"false\">=</mo> <mfrac> <mn>1</mn> <mrow> <mi>n</mi> <mo stretchy=\"false\">⋅</mo> <mi>e</mi> </mrow> </mfrac> </mrow> </math>",
+        "title": "Hallkonstante"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>U</mi> <mi mathvariant=\"italic\">Ind</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <mrow> <mo stretchy=\"false\">−</mo> <mi>B</mi> </mrow> <mo stretchy=\"false\">⋅</mo> <mi>l</mi> <mo stretchy=\"false\">⋅</mo> <mi>v</mi> <mo stretchy=\"false\">⋅</mo> <mi>n</mi> </mrow> </mrow> </math><math> <mrow> <mrow /> <mo stretchy=\"false\">−</mo> <mrow> <mi>n</mi> <mo stretchy=\"false\">⋅</mo> <mover accent=\"true\"> <mi>∅</mi> <mo stretchy=\"false\">˙</mo> </mover> </mrow> </mrow> </math>",
+        "title": "Induktionsspannung"
+    },
+    {
+        "formel": "<math> <mrow> <mover accent=\"true\"> <mi>∅</mi> <mo stretchy=\"false\">˙</mo> </mover> <mo stretchy=\"false\">=</mo> <mover accent=\"true\"> <mrow> <mo fence=\"true\" stretchy=\"false\">(</mo> <mrow> <mrow> <mi>B</mi> <mo stretchy=\"false\">⋅</mo> <mi>A</mi> </mrow> </mrow> <mo fence=\"true\" stretchy=\"false\">)</mo> </mrow> <mo stretchy=\"false\">˙</mo> </mover> </mrow> </math>",
+        "title": "Magnetischer Fluss"
+    },
+    {
+        "formel": "<math> <mrow> <mrow> <msub> <mi>E</mi> <mi>L</mi> </msub> <mo stretchy=\"false\">=</mo> <mfrac> <mn>1</mn> <mn>2</mn> </mfrac> </mrow> <mrow> <mi>L</mi> <mo stretchy=\"false\">⋅</mo> <msup> <mi>I</mi> <mn>2</mn> </msup> </mrow> </mrow> </math>",
+        "title": "Energie in der Spule"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>F</mi> <mi>L</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <mrow> <mo fence=\"true\" stretchy=\"true\">(</mo> <mrow> <mi>n</mi> </mrow> <mo fence=\"true\" stretchy=\"true\">)</mo> </mrow> <mo stretchy=\"false\">⋅</mo> <mi>e</mi> <mo stretchy=\"false\">⋅</mo> <mi>B</mi> <mo stretchy=\"false\">⋅</mo> <mi>v</mi> </mrow> </mrow> </math><br><math> <mrow> <msub> <mi>F</mi> <mi>L</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <mi>I</mi> <mo stretchy=\"false\">⋅</mo> <mi>B</mi> <mo stretchy=\"false\">⋅</mo> <mi>s</mi> <mo stretchy=\"false\">⋅</mo> <mi>n</mi> </mrow> </mrow> </math>",
+        "title": "Lorenzkraft"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>F</mi> <mi>Z</mi> </msub> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <mi>m</mi> <mo stretchy=\"false\">⋅</mo> <msup> <mi>v</mi> <mn>2</mn> </msup> </mrow> <mi>r</mi> </mfrac> </mrow> </math>",
+        "title": "Zentripetalkraft"
+    },
+    {
+        "formel": "<math> <mrow> <mi>F</mi> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>n</mi> <mn>2</mn> </msub> <mo stretchy=\"false\">⋅</mo> <mi>B</mi> <mo stretchy=\"false\">⋅</mo> <mi>I</mi> <mo stretchy=\"false\">⋅</mo> <msub> <mi>s</mi> <mrow> <mi mathvariant=\"italic\">Katnenlänge</mi> <mi mathvariant=\"italic\">äA</mi> </mrow> </msub> </mrow> </mrow> </math>",
+        "title": "Kraft Spule in Soule"
+    },
+    {
+        "formel": "<math> <mrow> <mi>T</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <mn>2</mn> <mrow> <mi>π</mi> <mo stretchy=\"false\">⋅</mo> <mi>r</mi> </mrow> </mrow> <mi>v</mi> </mfrac> </mrow> </math>",
+        "title": "Verweildauer"
+    },
+    {
+        "formel": "<math> <mrow> <mrow> <mi>T</mi> <mo stretchy=\"false\">=</mo> <mn>2</mn> </mrow> <mfrac> <mrow> <mi>π</mi> <mo stretchy=\"false\">⋅</mo> <mi>m</mi> </mrow> <mrow> <mi>e</mi> <mo stretchy=\"false\">⋅</mo> <mi>B</mi> </mrow> </mfrac> </mrow> </math>",
+        "title": "Schraubenbahn"
+    },
+    {
+        "formel": "<math> <mrow> <mi>r</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <mi>v</mi> <mo stretchy=\"false\">⋅</mo> <mi>m</mi> </mrow> <mrow> <mi>B</mi> <mo stretchy=\"false\">⋅</mo> <mi>e</mi> </mrow> </mfrac> </mrow> </math>",
+        "title": "Schraubenbahn"
+    }
+]

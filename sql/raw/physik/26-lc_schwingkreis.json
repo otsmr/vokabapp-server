@@ -1,0 +1,14 @@
+[
+    {
+        "formel": "<math> <mrow> <mi>ω</mi> <mo stretchy=\"false\">=</mo> <msqrt> <mfrac> <mn>1</mn> <mrow> <mi>L</mi> <mo stretchy=\"false\">⋅</mo> <mi>C</mi> </mrow> </mfrac> </msqrt> </mrow> </math>",
+        "title": "LC-Schwingkreis"
+    },
+    {
+        "formel": "<math> <mrow> <mover accent=\"true\"> <mi>Q</mi> <mo stretchy=\"false\">¨</mo> </mover> <mrow> <mrow> <mo fence=\"true\" stretchy=\"true\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"true\">)</mo> </mrow> <mo stretchy=\"false\">=</mo> <mrow> <mfrac> <mrow> <mo stretchy=\"false\">−</mo> <mn>1</mn> </mrow> <mrow> <mi>L</mi> <mo stretchy=\"false\">⋅</mo> <mi>C</mi> </mrow> </mfrac> <mo stretchy=\"false\">⋅</mo> <mi>Q</mi> </mrow> </mrow> <mrow> <mo fence=\"true\" stretchy=\"false\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"false\">)</mo> </mrow> </mrow> </math><br><math> <mrow> <mi>Q</mi> <mrow> <mrow> <mo fence=\"true\" stretchy=\"true\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"true\">)</mo> </mrow> <msup> <mo stretchy=\"false\">=</mo> <mi>Q</mi> </msup> <mrow /> </mrow> <mi>cos</mi> <mi>⁡</mi> <mrow> <mo fence=\"true\" stretchy=\"false\">(</mo> <mrow> <mrow> <mi>ω</mi> <mo stretchy=\"false\">⋅</mo> <mi>t</mi> </mrow> </mrow> <mo fence=\"true\" stretchy=\"false\">)</mo> </mrow> </mrow> </math>",
+        "title": "DGL"
+    },
+    {
+        "formel": "<math> <mrow> <mi>I</mi> <mrow> <mrow> <mo fence=\"true\" stretchy=\"true\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"true\">)</mo> </mrow> <mo stretchy=\"false\">=</mo> <mrow> <mi>Î</mi> <mo stretchy=\"false\">⋅</mo> <mi>sin</mi> </mrow> </mrow> <mi>⁡</mi> <mrow> <mo fence=\"true\" stretchy=\"false\">(</mo> <mrow> <mrow> <mi>ω</mi> <mo stretchy=\"false\">⋅</mo> <mi>t</mi> </mrow> </mrow> <mo fence=\"true\" stretchy=\"false\">)</mo> </mrow> </mrow> </math>",
+        "title": "Stromstärke"
+    }
+]

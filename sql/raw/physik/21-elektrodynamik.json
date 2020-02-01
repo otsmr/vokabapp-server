@@ -1,0 +1,78 @@
+[
+    {
+        "formel": "<math> <mrow> <mi>R</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mi>U</mi> <mi>I</mi> </mfrac> </mrow> </math>",
+        "title": "Ohm´sche Gesetz"
+    },
+    {
+        "formel": "<math> <mrow> <mi>I</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <mi>∆</mi> <mi>Q</mi> </mrow> <mrow> <mi>∆</mi> <mi>t</mi> </mrow> </mfrac> </mrow> </math>",
+        "title": "Stromstärke"
+    },
+    {
+        "formel": "<math> <mrow> <mi>n</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mi>Q</mi> <mi>e</mi> </mfrac> </mrow> </math>",
+        "title": "Anzahl Elektronen"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>R</mi> <mi mathvariant=\"italic\">ges</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>R</mi> <mn>1</mn> </msub> <mo stretchy=\"false\">+</mo> <msub> <mi>R</mi> <mn>2</mn> </msub> <mo stretchy=\"false\">+</mo> <mi>…</mi> </mrow> </mrow> </math>",
+        "title": "Wiederstand Reihenschaltung"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>I</mi> <mi mathvariant=\"italic\">ges</mi> </msub> <mo stretchy=\"false\">=</mo> <msub> <mi>I</mi> <mn>1</mn> </msub> <mo stretchy=\"false\">=</mo> <msub> <mi>I</mi> <mn>2</mn> </msub> <mo stretchy=\"false\">=</mo> <mi>…</mi> </mrow> </math>",
+        "title": "Stromstäre Reihenschaltung"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>U</mi> <mi mathvariant=\"italic\">ges</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>U</mi> <mn>1</mn> </msub> <mo stretchy=\"false\">+</mo> <msub> <mi>U</mi> <mn>2</mn> </msub> <mo stretchy=\"false\">+</mo> <mi>…</mi> </mrow> </mrow> </math>",
+        "title": "Spannung Reihenschaltung"
+    },
+    {
+        "formel": "<math> <mrow> <mfrac> <mn>1</mn> <msub> <mi>R</mi> <mi mathvariant=\"italic\">ges</mi> </msub> </mfrac> <mo stretchy=\"false\">=</mo> <mrow> <mfrac> <mn>1</mn> <msub> <mi>R</mi> <mn>1</mn> </msub> </mfrac> <mo stretchy=\"false\">+</mo> <mfrac> <mn>1</mn> <msub> <mi>R</mi> <mn>2</mn> </msub> </mfrac> <mo stretchy=\"false\">+</mo> <mi>…</mi> </mrow> </mrow> </math>",
+        "title": "Wiederstand Parallelschaltung"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>I</mi> <mi mathvariant=\"italic\">ges</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>I</mi> <mn>1</mn> </msub> <mo stretchy=\"false\">+</mo> <msub> <mi>I</mi> <mn>2</mn> </msub> <mo stretchy=\"false\">+</mo> <mi>…</mi> </mrow> </mrow> </math>",
+        "title": "Stromstärke Parallelschaltung"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>U</mi> <mi mathvariant=\"italic\">ges</mi> </msub> <mo stretchy=\"false\">=</mo> <msub> <mi>U</mi> <mn>1</mn> </msub> <mo stretchy=\"false\">=</mo> <msub> <mi>U</mi> <mn>2</mn> </msub> <mo stretchy=\"false\">=</mo> <mi>…</mi> </mrow> </math>",
+        "title": "Spannung Parallelschaltung"
+    },
+    {
+        "formel": "<math> <mrow> <mi>E</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mi>U</mi> <mi>d</mi> </mfrac> </mrow> </math>",
+        "title": "el. Feldstärke"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>F</mi> <mi mathvariant=\"italic\">el</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <mi>q</mi> <mo stretchy=\"false\">⋅</mo> <mi>E</mi> </mrow> </mrow> </math>",
+        "title": "Kraft E-Feld"
+    },
+    {
+        "formel": "<math> <mrow> <mi>C</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mi>Q</mi> <mi>U</mi> </mfrac> </mrow> </math>",
+        "title": "Kapazität im Kondensator"
+    },
+    {
+        "formel": "<math> <mrow> <mrow> <mi>C</mi> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>E</mi> <mn>0</mn> </msub> <mo stretchy=\"false\">⋅</mo> <msub> <mi>E</mi> <mi>r</mi> </msub> </mrow> </mrow> <mfrac> <mi>A</mi> <mi>d</mi> </mfrac> </mrow> </math>",
+        "title": "Kapazität im Kondensator"
+    },
+    {
+        "formel": "<math> <mrow> <mrow> <msub> <mi>W</mi> <mi mathvariant=\"italic\">kon</mi> </msub> <mo stretchy=\"false\">=</mo> <mfrac> <mn>1</mn> <mn>2</mn> </mfrac> </mrow> <mrow> <mi>Q</mi> <mo stretchy=\"false\">⋅</mo> <mi>U</mi> </mrow> </mrow> </math>",
+        "title": "Energie im Kondensator"
+    },
+    {
+        "formel": "<math> <mrow> <mi>σ</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mi>Q</mi> <mi>A</mi> </mfrac> <mo stretchy=\"false\">=</mo> <mrow> <mi>E</mi> <mo stretchy=\"false\">⋅</mo> <msub> <mi>E</mi> <mn>0</mn> </msub> </mrow> </mrow> </math>",
+        "title": "Flächenladungsdichte"
+    },
+    {
+        "formel": "<math> <mrow> <mi>a</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <mi>E</mi> <mo stretchy=\"false\">⋅</mo> <mi>e</mi> </mrow> <msub> <mi>m</mi> <mi>e</mi> </msub> </mfrac> </mrow> </math>",
+        "title": "Beschleunigung eines Elektron (e-Feld hom)"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>W</mi> <mi mathvariant=\"italic\">kin</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>q</mi> <mi>e</mi> </msub> <mo stretchy=\"false\">⋅</mo> <mi>U</mi> </mrow> </mrow> </math>",
+        "title": "Kinetische Energie eines Elektrons"
+    },
+    {
+        "formel": "<math> <mrow> <mi>∆</mi> <mrow> <mi>S</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <mi>∆</mi> <mi>W</mi> </mrow> <mi>T</mi> </mfrac> </mrow> </mrow> </math>",
+        "title": "Maximale Entropie"
+    },
+    {
+        "formel": "<math> <mrow> <mi>F</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <mi>k</mi> <mo stretchy=\"false\">⋅</mo> <mi>Q</mi> <mo stretchy=\"false\">⋅</mo> <mi>q</mi> </mrow> <msup> <mi>r</mi> <mn>2</mn> </msup> </mfrac> </mrow> </math>",
+        "title": "Coulomb-Kräfte"
+    }
+]

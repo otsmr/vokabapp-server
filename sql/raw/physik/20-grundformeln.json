@@ -1,0 +1,30 @@
+[
+    {
+        "formel": "<math> <mrow> <mi>s</mi> <mo stretchy=\"false\">=</mo> <mrow> <mfrac> <mn>1</mn> <mn>2</mn> </mfrac> <mo stretchy=\"false\">⋅</mo> <mi>a</mi> <mo stretchy=\"false\">⋅</mo> <msup> <mi>t</mi> <mn>2</mn> </msup> </mrow> </mrow> </math>",
+        "title": "Strecke"
+    },
+    {
+        "formel": "<math> <mrow> <mi>v</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <mi>∆</mi> <mi>s</mi> </mrow> <mrow> <mi>∆</mi> <mi>t</mi> </mrow> </mfrac> </mrow> </math>",
+        "title": "Geschwindigkeit"
+    },
+    {
+        "formel": "<math> <mrow> <mi>a</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <mi>∆</mi> <mi>v</mi> </mrow> <mrow> <mi>∆</mi> <mi>t</mi> </mrow> </mfrac> </mrow> </math>",
+        "title": "Beschleunigung"
+    },
+    {
+        "formel": "<math> <mrow> <mrow> <msub> <mi>W</mi> <mi mathvariant=\"italic\">kin</mi> </msub> <mo stretchy=\"false\">=</mo> <mfrac> <mn>1</mn> <mn>2</mn> </mfrac> </mrow> <mi>m</mi> <msup> <mi>v</mi> <mn>2</mn> </msup> </mrow> </math>",
+        "title": "Kinetische Energie"
+    },
+    {
+        "formel": "<math> <mrow> <mi>W</mi> <mo stretchy=\"false\">=</mo> <mrow> <mi>m</mi> <mo stretchy=\"false\">⋅</mo> <mi>g</mi> <mo stretchy=\"false\">⋅</mo> <mi>h</mi> </mrow> </mrow> </math>",
+        "title": "Bewegungsenergie"
+    },
+    {
+        "formel": "<math> <mrow> <mrow> <mi>A</mi> <mo stretchy=\"false\">=</mo> <mrow> <mi>π</mi> <mo stretchy=\"false\">⋅</mo> <msup> <mi>r</mi> <mn>2</mn> </msup> </mrow> </mrow> <mi>;</mi> <mrow> <mi>r</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mi>d</mi> <mn>2</mn> </mfrac> </mrow> </mrow> </math>",
+        "title": "Fläche eines Kreises"
+    },
+    {
+        "formel": "<math> <mrow> <mi>P</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mi>W</mi> <mi>t</mi> </mfrac> </mrow> </math>",
+        "title": "Leistung"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "formel": "<math> <mrow> <mi>E</mi> <mo stretchy=\"false\">=</mo> <mrow> <mi>h</mi> <mo stretchy=\"false\">⋅</mo> <mi>f</mi> </mrow> </mrow> </math>",
+        "title": "Energie eines Quantenobjekts"
+    },
+    {
+        "formel": "<math> <mrow> <mi>λ</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mi>h</mi> <mi>p</mi> </mfrac> <mo stretchy=\"false\">=</mo> <mfrac> <mi>h</mi> <mrow> <mi>m</mi> <mo stretchy=\"false\">⋅</mo> <mi>v</mi> </mrow> </mfrac> </mrow> </math>",
+        "title": "De-Broglie-Wellenlänge eines Quantenobjekts"
+    },
+    {
+        "formel": "<math> <mrow> <mi>E</mi> <mo stretchy=\"false\">=</mo> <mrow> <mi>m</mi> <mo stretchy=\"false\">⋅</mo> <msup> <mi>c</mi> <mn>2</mn> </msup> </mrow> </mrow> </math>",
+        "title": "Energie-Masse-Beziehung"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>E</mi> <mi mathvariant=\"italic\">Ph</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <mrow> <mi>h</mi> <mo stretchy=\"false\">⋅</mo> <mi>f</mi> </mrow> <mo stretchy=\"false\">−</mo> <msub> <mi>E</mi> <mi>A</mi> </msub> </mrow> </mrow> </math>",
+        "title": "Äußerer Photoeffekt für Licht/Photonen"
+    },
+    {
+        "formel": "<math> <mrow> <mn>2</mn> <mrow> <mi>d</mi> <mo stretchy=\"false\">⋅</mo> <mi>sin</mi> </mrow> <mi>⁡</mi> <mrow> <mrow> <mo fence=\"true\" stretchy=\"false\">(</mo> <mrow> <mrow> <mn>2</mn> <mo stretchy=\"false\">⋅</mo> <mi>φ</mi> </mrow> </mrow> <mo fence=\"true\" stretchy=\"false\">)</mo> </mrow> <mo stretchy=\"false\">=</mo> <mrow> <mi>k</mi> <mo stretchy=\"false\">⋅</mo> <mi>λ</mi> </mrow> </mrow> </mrow> </math>",
+        "title": "Bragg-G für Beugung Qo. am Gitterkristall (zwei Netzebenen)"
+    },
+    {
+        "formel": "<math> <mrow> <mi>h</mi> <mi>≤</mi> <mi>∆</mi> <mrow> <mi>x</mi> <mo stretchy=\"false\">⋅</mo> <mi>∆</mi> </mrow> <mi>p</mi> </mrow> </math>",
+        "title": "Unschärferelation (Impuls-Ort)"
+    },
+    {
+        "formel": "<math> <mrow> <mi>sin</mi> <mrow> <mrow> <mn>2</mn> <mi>φ</mi> </mrow> <mo stretchy=\"false\">=</mo> <mfrac> <mi>r</mi> <mi>l</mi> </mfrac> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <mi>k</mi> <mo stretchy=\"false\">⋅</mo> <mi>λ</mi> </mrow> <mi>d</mi> </mfrac> </mrow> </mrow> </math>",
+        "title": "Wellen"
+    }
+]

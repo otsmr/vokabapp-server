@@ -1,6 +1,6 @@
 <?php
 die();
-$filename = __DIR__ . '/vokabapp-liste.sql';
+$filename = __DIR__ . '/out.sql';
 
 require_once __DIR__ . "/../api/db.php";
 
@@ -15,8 +15,8 @@ foreach ($lines as $line) {
     $templine .= $line;
     
     if (substr(trim($line), -1, 1) == ';') {
-        echo $templine;
-        $db->query($templine);
+        // echo $templine;
+        print_r($db->insert($templine));
         $templine = '';
     }
 }

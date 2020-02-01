@@ -1,0 +1,22 @@
+[
+    {
+        "formel": "<math> <mrow> <mfrac> <mn>1</mn> <msub> <mi>C</mi> <mi mathvariant=\"italic\">ges</mi> </msub> </mfrac> <mo stretchy=\"false\">=</mo> <mrow> <mfrac> <mn>1</mn> <msub> <mi>C</mi> <mn>1</mn> </msub> </mfrac> <mo stretchy=\"false\">+</mo> <mfrac> <mn>1</mn> <msub> <mi>C</mi> <mn>2</mn> </msub> </mfrac> <mo stretchy=\"false\">+</mo> <mi>…</mi> </mrow> </mrow> </math>",
+        "title": "Kapazität in Reihenschaltung"
+    },
+    {
+        "formel": "<math> <mrow> <mi>C</mi> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>C</mi> <mn>1</mn> </msub> <mo stretchy=\"false\">+</mo> <msub> <mi>C</mi> <mn>2</mn> </msub> <mo stretchy=\"false\">+</mo> <mi>…</mi> </mrow> </mrow> </math>",
+        "title": "Kapazität in Parallelschaltung"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>U</mi> <mi mathvariant=\"italic\">ges</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>U</mi> <mi mathvariant=\"italic\">Quelle</mi> </msub> <mo stretchy=\"false\">−</mo> <msub> <mi>U</mi> <mi mathvariant=\"italic\">Kondensator</mi> </msub> </mrow> </mrow> </math>",
+        "title": "Spannung"
+    },
+    {
+        "formel": "<math> <mrow> <mi>Q</mi> <mrow> <mrow> <mo fence=\"true\" stretchy=\"true\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"true\">)</mo> </mrow> <mo stretchy=\"false\">=</mo> <mrow> <mrow> <mi>C</mi> <mo stretchy=\"false\">⋅</mo> <msub> <mi>U</mi> <mi>q</mi> </msub> </mrow> <mo stretchy=\"false\">−</mo> <mrow> <mi>C</mi> <mo stretchy=\"false\">⋅</mo> <msub> <mi>U</mi> <mi>q</mi> </msub> <mo stretchy=\"false\">⋅</mo> <msup> <mi>e</mi> <mfrac> <mrow> <mo stretchy=\"false\">−</mo> <mn>1</mn> </mrow> <mrow> <mi>R</mi> <mo stretchy=\"false\">⋅</mo> <mi>C</mi> </mrow> </mfrac> </msup> <mo stretchy=\"false\">⋅</mo> <mi>t</mi> </mrow> </mrow> </mrow> </mrow> </math>",
+        "title": "Ladung in Abhängigkeit zur Zeit"
+    },
+    {
+        "formel": "<math> <mrow> <mover accent=\"true\"> <mi>Q</mi> <mo stretchy=\"false\">˙</mo> </mover> <mrow> <mrow> <mo fence=\"true\" stretchy=\"true\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"true\">)</mo> </mrow> <mo stretchy=\"false\">=</mo> <mrow> <mfrac> <msub> <mi>U</mi> <mi>q</mi> </msub> <mi>R</mi> </mfrac> <mo stretchy=\"false\">−</mo> <mrow> <mfrac> <mn>1</mn> <mrow> <mi>R</mi> <mo stretchy=\"false\">⋅</mo> <mi>C</mi> </mrow> </mfrac> <mo stretchy=\"false\">⋅</mo> <mi>Q</mi> </mrow> </mrow> </mrow> <mrow> <mo fence=\"true\" stretchy=\"false\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"false\">)</mo> </mrow> </mrow> </math>",
+        "title": "1. Ableitung von <mover accent=\"true\"> <mi>Q</mi> </mover><mrow> <mo fence=\"true\" stretchy=\"true\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"true\">)</mo> </mrow>"
+    }
+]

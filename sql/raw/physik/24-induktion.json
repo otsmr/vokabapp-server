@@ -1,0 +1,10 @@
+[
+    {
+        "formel": "<math> <mrow> <mi>L</mi> <mo stretchy=\"false\">=</mo> <mrow> <mfrac> <mrow> <mrow> <mo stretchy=\"false\">−</mo> <msub> <mi>μ</mi> <mn>0</mn> </msub> </mrow> <mo stretchy=\"false\">⋅</mo> <msub> <mi>μ</mi> <mi>r</mi> </msub> <mo stretchy=\"false\">⋅</mo> <msup> <mi>n</mi> <mn>2</mn> </msup> </mrow> <mi>l</mi> </mfrac> <mo stretchy=\"false\">⋅</mo> <mi>A</mi> </mrow> </mrow> </math>",
+        "title": "Induktivität einer Spule"
+    },
+    {
+        "formel": "<math> <mrow> <mi>L</mi> <mo stretchy=\"false\">=</mo> <mfrac> <msub> <mi>U</mi> <mn>0</mn> </msub> <mover accent=\"true\"> <mrow> <mi>I</mi> <mrow> <mo fence=\"true\" stretchy=\"false\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"false\">)</mo> </mrow> </mrow> <mo stretchy=\"false\">˙</mo> </mover> </mfrac> </mrow> </math>",
+        "title": "Induktivität einer Spule (Ableitung)"
+    }
+]

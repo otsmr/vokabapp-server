@@ -1,0 +1,50 @@
+[
+    {
+        "formel": "<math> <mrow> <mi>s</mi> <mrow> <mrow> <mo fence=\"true\" stretchy=\"true\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"true\">)</mo> </mrow> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>s</mi> <mi mathvariant=\"italic\">max</mi> </msub> <mo stretchy=\"false\">⋅</mo> <mi>sin</mi> </mrow> </mrow> <mi>⁡</mi> <mrow> <mo fence=\"true\" stretchy=\"false\">(</mo> <mrow> <mrow> <mrow> <mi>ω</mi> <mo stretchy=\"false\">⋅</mo> <mi>t</mi> </mrow> <mo stretchy=\"false\">+</mo> <mi>φ</mi> </mrow> </mrow> <mo fence=\"true\" stretchy=\"false\">)</mo> </mrow> </mrow> </math>",
+        "title": "Weg-Zeit-Gesetz"
+    },
+    {
+        "formel": "<math> <mrow> <mi>v</mi> <mrow> <mrow> <mo fence=\"true\" stretchy=\"true\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"true\">)</mo> </mrow> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>v</mi> <mi mathvariant=\"italic\">max</mi> </msub> <mo stretchy=\"false\">⋅</mo> <mi>sin</mi> </mrow> </mrow> <mi>⁡</mi> <mrow> <mo fence=\"true\" stretchy=\"false\">(</mo> <mrow> <mrow> <mrow> <mi>ω</mi> <mo stretchy=\"false\">⋅</mo> <mi>t</mi> </mrow> <mo stretchy=\"false\">+</mo> <mi>φ</mi> </mrow> </mrow> <mo fence=\"true\" stretchy=\"false\">)</mo> </mrow> </mrow> </math><br><math> <mrow> <msub> <mi>v</mi> <mi mathvariant=\"italic\">max</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>s</mi> <mi mathvariant=\"italic\">max</mi> </msub> <mo stretchy=\"false\">⋅</mo> <mi>ω</mi> </mrow> </mrow> </math>",
+        "title": "1. Ableitung Weg-Zeit-Gesetz"
+    },
+    {
+        "formel": "<math> <mrow> <mi>a</mi> <mrow> <mrow> <mo fence=\"true\" stretchy=\"true\">(</mo> <mrow> <mi>t</mi> </mrow> <mo fence=\"true\" stretchy=\"true\">)</mo> </mrow> <mo stretchy=\"false\">=</mo> <mrow> <mrow> <mo stretchy=\"false\">−</mo> <msub> <mi>a</mi> <mi mathvariant=\"italic\">max</mi> </msub> </mrow> <mo stretchy=\"false\">⋅</mo> <mi>sin</mi> </mrow> </mrow> <mi>⁡</mi> <mrow> <mo fence=\"true\" stretchy=\"false\">(</mo> <mrow> <mrow> <mrow> <mi>ω</mi> <mo stretchy=\"false\">⋅</mo> <mi>t</mi> </mrow> <mo stretchy=\"false\">+</mo> <mi>φ</mi> </mrow> </mrow> <mo fence=\"true\" stretchy=\"false\">)</mo> </mrow> </mrow> </math><br><math> <mrow> <msub> <mi>a</mi> <mi mathvariant=\"italic\">max</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>s</mi> <mi mathvariant=\"italic\">max</mi> </msub> <mo stretchy=\"false\">⋅</mo> <msup> <mi>ω</mi> <mn>2</mn> </msup> </mrow> </mrow> </math>",
+        "title": "2. Ableitung Weg-Zeit-Gesetz"
+    },
+    {
+        "formel": "<math> <mrow> <mi>F</mi> <mo stretchy=\"false\">=</mo> <mrow> <mi>D</mi> <mo stretchy=\"false\">⋅</mo> <mi>s</mi> </mrow> </mrow> </math>",
+        "title": "Hooksches Gesetz"
+    },
+    {
+        "formel": "<math> <mrow> <mi>F</mi> <mo stretchy=\"false\">=</mo> <mrow> <mi>ρ</mi> <mo stretchy=\"false\">⋅</mo> <mi>V</mi> <mo stretchy=\"false\">⋅</mo> <mi>g</mi> </mrow> </mrow> </math>",
+        "title": "Kraft U-Rohr"
+    },
+    {
+        "formel": "<math> <mrow> <mi>f</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mn>1</mn> <mi>T</mi> </mfrac> </mrow> </math>",
+        "title": "Frequenz"
+    },
+    {
+        "formel": "<math> <mrow> <mrow> <mi>ω</mi> <mo stretchy=\"false\">=</mo> <mn>2</mn> </mrow> <mrow> <mi mathvariant=\"italic\">πf</mi> <mo stretchy=\"false\">=</mo> <mfrac> <mrow> <mi>∆</mi> <mi>φ</mi> </mrow> <mrow> <mi>∆</mi> <mi>t</mi> </mrow> </mfrac> </mrow> </mrow> </math>",
+        "title": "Winkelgkeit / Kreisfrequenz"
+    },
+    {
+        "formel": "<math> <mrow> <msub> <mi>D</mi> <mi mathvariant=\"italic\">ges</mi> </msub> <mo stretchy=\"false\">=</mo> <mrow> <msub> <mi>D</mi> <mn>1</mn> </msub> <mo stretchy=\"false\">+</mo> <msub> <mi>D</mi> <mn>2</mn> </msub> </mrow> </mrow> </math>",
+        "title": "Federkonstante (horizo. Fadenpendel)"
+    },
+    {
+        "formel": "<math> <mrow> <mfrac> <mn>1</mn> <msub> <mi>D</mi> <mi mathvariant=\"italic\">ges</mi> </msub> </mfrac> <mo stretchy=\"false\">=</mo> <mrow> <mfrac> <mn>1</mn> <msub> <mi>D</mi> <mn>1</mn> </msub> </mfrac> <mo stretchy=\"false\">+</mo> <mfrac> <mn>1</mn> <msub> <mi>D</mi> <mn>2</mn> </msub> </mfrac> </mrow> </mrow> </math>",
+        "title": "Federkonstante seriell"
+    },
+    {
+        "formel": "<math> <mrow> <mrow> <msub> <mi>E</mi> <mi mathvariant=\"italic\">Spann</mi> </msub> <mo stretchy=\"false\">=</mo> <mfrac> <mn>1</mn> <mn>2</mn> </mfrac> </mrow> <mi>D</mi> <msup> <mi>s</mi> <mn>2</mn> </msup> </mrow> </math>",
+        "title": "Spannenergie"
+    },
+    {
+        "formel": "<math> <mrow> <mi>ω</mi> <mo stretchy=\"false\">=</mo> <msqrt> <mfrac> <mi>D</mi> <mi>m</mi> </mfrac> </msqrt> <mo stretchy=\"false\">=</mo> <msqrt> <mfrac> <mi>g</mi> <mi>l</mi> </mfrac> </msqrt> </mrow> </math>",
+        "title": "Schwingungsdauer Federpendel"
+    },
+    {
+        "formel": "<math> <mrow> <mi>ω</mi> <mo stretchy=\"false\">=</mo> <msqrt> <mfrac> <mrow> <mn>2</mn> <mo stretchy=\"false\">⋅</mo> <mi>g</mi> </mrow> <mi>l</mi> </mfrac> </msqrt> </mrow> </math>",
+        "title": "Schwingungsdauer U-Rohr"
+    }
+]
