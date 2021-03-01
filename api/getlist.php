@@ -8,7 +8,7 @@ require_once __DIR__ . "/db.php";
 $sessionID = null;
 
 if (isset($_POST["sessionID"])) {
-    $sessionID = $_POST["sessionID"];
+    $sessionID = (string) $_POST["sessionID"];
 }
 
 if (isset($_POST["getMetaData"])) {
@@ -27,10 +27,9 @@ if (isset($_POST["getMetaData"])) {
 
 if ($_POST["getListsByIDs"]) {
 
-    $listIDs = $_POST["getListsByIDs"];
+    $listIDs = json_decode((string) $_POST["getListsByIDs"]);
     $sql = "";
     foreach ($listIDs as $key => $listID) {
-        //! Abfrage unsicher?
         $sql .= "listID = " . ((int) $listID) . " or ";
     }
     $sql .= "0";
